@@ -23,8 +23,8 @@ class ReviewController extends Controller
         try {
             $viewData = [];
             $review = Review::findOrFail($id);
-            $viewData['title'] = $review['title'] . ' - Temporal Adventure';
-            $viewData['subtitle'] = $review['title'] . ' - Review information';
+            $viewData['title'] = $review['title'].' - Temporal Adventure';
+            $viewData['subtitle'] = $review['title'].' - Review information';
             $viewData['review'] = $review;
 
             return view('review.show')->with('viewData', $viewData);
@@ -47,8 +47,6 @@ class ReviewController extends Controller
             'rating' => 'required|numeric|min:0|max:5',
         ]);
 
-       
-
         Review::create($request->only(['title', 'description', 'rating']));
 
         return view('review.save');
@@ -63,6 +61,7 @@ class ReviewController extends Controller
         } catch (Exception $e) {
             return redirect('/reviews');
         }
+
         return redirect('/reviews');
     }
 }
