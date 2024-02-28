@@ -1,0 +1,6 @@
+Primero, entre al panel de MySql y cree una nueva base de datos. El nombre que use fue “taller1”.
+Luego, vaya al archivo ”.env” y compruebe que el nombre de “DB_DATABASE” sea el mismo que el de la base de datos creada en el paso anterior.
+Después, en la terminal ejecute “php artisan migrate” para realizar las migraciones.
+Ahora, en la terminal ejecute “php artisan db:seed” para poblar la base de datos.
+Finalmente, ejecute el comando “php artisan serve” para correr el proyecto. Y vaya al enlace que aparece y visualice el proyecto.
+
